@@ -3,13 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard - Smart Traffic Lights Controller</title>
+    <title>Smart Traffic Lights Controller Dashboard</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e9ecef;
+        }
+        header {
+            background: #343a40;
+            color: #ffffff;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        nav {
+            background: #343a40;
+            color: #ffffff;
+            padding: 10px 0;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        nav ul li a:hover {
+            color: #ffc107;
+        }
+        .dashboard-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+        .status-card {
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+            padding: 20px;
+            flex: 1 1 300px;
+            min-width: 300px;
+            transition: transform 0.2s;
+        }
+        .status-card:hover {
+            transform: scale(1.02);
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #343a40;
+            color: #ffffff;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        .button {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background-color: #218838;
+        }
+        .alert {
+            color: #dc3545;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <h1>Dashboard</h1>
+        <h1>Smart Traffic Lights Controller Dashboard</h1>
     </header>
 
     <nav>
@@ -18,6 +101,7 @@
             <li><a href="control-panel.html">Control Panel</a></li>
             <li><a href="data-analytics.html">Data Analytics</a></li>
             <li><a href="live-feed.html">Live Video Feed</a></li>
+            <li><a href="settings.html">Settings</a></li>
         </ul>
     </nav>
 
@@ -27,10 +111,24 @@
                 <div class="status-card">
                     <h3>Traffic Light Status</h3>
                     <div id="traffic-status">Loading...</div>
+                    <button class="button" onclick="refreshStatus()">Refresh Status</button>
                 </div>
                 <div class="status-card">
                     <h3>Current Traffic Flow</h3>
                     <canvas id="trafficFlowChart"></canvas>
+                </div>
+                <div class="status-card">
+                    <h3>Recent Alerts</h3>
+                    <ul id="alerts-list">
+                        <li>No alerts</li>
+                    </ul>
+                    <button class="button" onclick="viewAlerts()">View Alerts</button>
+                </div>
+                <div class="status-card">
+                    <h3>Control Traffic Lights</h3>
+                    <button class="button" onclick="changeLight('green')">Set to Green</button>
+                    <button class="button" onclick="changeLight('yellow')">Set to Yellow</button>
+                    <button class="button" onclick="changeLight ('red')">Set to Red</button>
                 </div>
             </div>
         </section>
@@ -41,5 +139,22 @@
     </footer>
 
     <script src="scripts.js"></script>
+    <script>
+        function refreshStatus() {
+            // Logic to refresh traffic light status
+            document.getElementById('traffic-status').innerText = "Status refreshed!";
+        }
+
+        function viewAlerts() {
+            // Logic to view alerts
+            const alertsList = document.getElementById('alerts-list');
+            alertsList.innerHTML = "<li>Alert 1: Traffic congestion detected</li><li>Alert 2: Light malfunction</li>";
+        }
+
+        function changeLight(color) {
+            // Logic to change traffic light color
+            document.getElementById('traffic-status').innerText = `Traffic light set to ${color}`;
+        }
+    </script>
 </body>
 </html>
