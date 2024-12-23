@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Analytics - Smart Traffic Lights Controller</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Data Analytics</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="control-panel.html">Control Panel</a></li>
+            <li><a href="data-analytics.html">Data Analytics</a></li>
+            <li><a href="live-feed.html">Live Video Feed</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section>
+            <div class="analytics-container">
+                <div class="analytics-card">
+                    <h3>Daily Traffic Volume</h3>
+                    <canvas id="dailyTrafficVolumeChart"></canvas>
+                </div>
+                <div class="analytics-card">
+                    <h3>Average Speed</h3>
+                    <canvas id="averageSpeedChart"></canvas>
+                </div>
+                <div class="analytics-card">
+                    <h3>Incident Reports</h3>
+                    <canvas id="incidentReportsChart"></canvas>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Smart Traffic Lights</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

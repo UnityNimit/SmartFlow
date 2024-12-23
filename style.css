@@ -46,6 +46,21 @@ section {
     margin-bottom: 1.5em;
 }
 
+.dashboard-container, .analytics-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+
+.status-card, .analytics-card {
+    background-color: #f9f9f9;
+    padding: 1em;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    flex: 1;
+    min-width: 300px;
+}
+
 footer {
     background-color: #4CAF50;
     color: white;
