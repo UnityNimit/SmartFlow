@@ -5,6 +5,12 @@ body {
     padding: 0;
     background-color: #f4f4f9;
     color: #333;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark {
+    background-color: #121212;
+    color: #e0e0e0;
 }
 
 header {
@@ -15,9 +21,17 @@ header {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+header.dark {
+    background-color: #1a252f;
+}
+
 nav {
     background-color: #34495e;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav.dark {
+    background-color: #1a252f;
 }
 
 nav ul {
@@ -45,6 +59,10 @@ nav ul li a:hover {
     background-color: #1abc9c;
 }
 
+nav ul li a.dark {
+    background-color: #1abc9c;
+}
+
 main {
     padding: 2em;
     max-width: 1200px;
@@ -57,11 +75,21 @@ section {
     padding: 1.5em;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+section.dark {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
 }
 
 h2 {
     border-bottom: 2px solid #2c3e50;
     padding-bottom: 0.5em;
+}
+
+h2.dark {
+    border-bottom-color: #1abc9c;
 }
 
 .dashboard-container, .analytics-container {
@@ -78,7 +106,12 @@ h2 {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     flex: 1;
     min-width: 300px;
-    transition: transform 0.3s;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.status-card.dark, .analytics-card.dark {
+    background-color: #1e1e1e;
+    border-color: #333;
 }
 
 .status-card:hover, .analytics-card:hover {
@@ -109,4 +142,8 @@ footer {
     bottom: 0;
     width: 100%;
     box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+}
+
+footer.dark {
+    background-color: #1a252f;
 }
