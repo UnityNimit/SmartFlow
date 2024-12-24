@@ -6,10 +6,13 @@
     <title>Data Analytics - Smart Traffic Lights Controller</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="dark-mode.css"> <!-- Link to dark mode styles -->
 </head>
 <body>
     <header>
         <h1>Data Analytics</h1>
+        <button id="darkModeToggle">Toggle Dark Mode</button> <!-- Dark mode toggle button -->
     </header>
 
     <nav>
@@ -36,6 +39,17 @@
                     <h3>Incident Reports</h3>
                     <canvas id="incidentReportsChart"></canvas>
                 </div>
+                <div class="analytics-card">
+                    <h3>Traffic Density Heatmap</h3>
+                    <canvas id="trafficDensityHeatmap"></canvas>
+                </div>
+                <div class="analytics-card">
+                    <h3>Historical Data Analysis</h3>
+                    <input type="date" id="startDate">
+                    <input type="date" id="endDate">
+                    <button id="fetchHistoricalData">Fetch Data</button>
+                    <canvas id="historicalDataChart"></canvas>
+                </div>
             </div>
         </section>
     </main>
@@ -45,5 +59,44 @@
     </footer>
 
     <script src="scripts.js"></script>
+    <script>
+        // Dark mode toggle functionality
+        document.getElementById('darkModeToggle').addEventListener('click', function() {
+            document.body.classList.toggle('dark-mode');
+        });
+
+        // Fetch historical data on button click
+        document.getElementById('fetchHistoricalData').addEventListener('click', function() {
+            const startDate = document.getElementById('startDate').value;
+            const endDate = document.getElementById('endDate').value;
+            // Fetch and display historical data logic here
+        });
+
+        // Initialize charts (example)
+        const ctx1 = document.getElementById('dailyTrafficVolumeChart').getContext('2d');
+        const dailyTrafficVolumeChart = new Chart(ctx1, {
+            type: 'line',
+            data: {
+                labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+                datasets: [{
+                    label: 'Traffic Volume',
+                    data: [120, 150, 180, 200, 170, 130, 90],
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1,
+                    fill: false
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        // Additional chart initialization for average speed, incident reports, etc.
+    </script>
 </body>
 </html>
