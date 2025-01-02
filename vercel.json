@@ -1,6 +1,6 @@
 {
     "env": {
-        "MONGODB_URI": "mongodb+srv://unitynimit:nVNUOS87PujdDVF5@smartflow.x12sk.mongodb.net/?retryWrites=true&w=majority&appName=SmartFlow"
+        "MONGODB_URI": "mongodb+srv://unitynimit:nVNUOS87PujdDVF5@smartflow.x12sk.mongodb.net/people?retryWrites=true&w=majority&appName=SmartFlow"
     },
     "routes": [
         { "src": "/", "dest": "login.html" }

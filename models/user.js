@@ -5,6 +5,7 @@ const userSchema = new mongoose.Schema({
     password: { type: String, required: true }
 });
 
-const User = mongoose.model('User', userSchema);
+// Explicitly specify the collection name as 'users'
+const User = mongoose.model('User ', userSchema, 'users');
 
 module.exports = User;
