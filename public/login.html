@@ -7,27 +7,41 @@
     <link rel="stylesheet" href="css/login.css">
 </head>
 <body>
-    <h2>Login</h2>
-    <form id="loginForm">
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required>
-        <br>
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required>
-        <br>
-        <button type="submit">Login</button>
-    </form>
+    <div class="container">
+        <h2>Login</h2>
+        <form id="loginForm" action="/auth/login" method="POST">
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" placeholder="Enter your username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+            </div>
+            <div class="form-group">
+                <button type="submit">Login</button>
+                <button type="reset">Reset</button>
+            </div>
+            <div id="loginError" class="error-message"></div>
+        </form>
 
-    <h2>Register</h2>
-    <form id="registerForm">
-        <label for="newUsername">Username:</label>
-        <input type="text" id="newUsername" name="newUsername" required>
-        <br>
-        <label for="newPassword">Password:</label>
-        <input type="password" id="newPassword" name="newPassword" required>
-        <br>
-        <button type="submit">Register</button>
-    </form>
+        <h2>Register</h2>
+        <form id="registerForm" action="/auth/register" method="POST">
+            <div class="form-group">
+                <label for="newUsername">Username:</label>
+                <input type="text" id="newUsername" name="username" placeholder="Choose a username" required>
+            </div>
+            <div class="form-group">
+                <label for="newPassword">Password:</label>
+                <input type="password" id="newPassword" name="password" placeholder="Choose a password" required>
+            </div>
+            <div class="form-group">
+                <button type="submit">Register</button>
+                <button type="reset">Reset</button>
+            </div>
+            <div id="registerError" class="error-message"></div>
+        </form>
+    </div>
 
     <script src="scripts/login/login.js"></script>
 </body>
