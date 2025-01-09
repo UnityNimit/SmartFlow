@@ -8,7 +8,7 @@ var mongoose = require('mongoose');
 var session = require('express-session');
 var MongoStore = require('connect-mongo')(session);
 
-mongoose.connect('mongodb+srv://<DB_USER_NAME>:<DB_PASSWORD>@cluster0-vatbg.mongodb.net/registrationFormHeruko?retryWrites=true&w=majority', {
+mongoose.connect('mongodb+srv://unitynimit:nVNUOS87PujdDVF5@smartflow.x12sk.mongodb.net/people?retryWrites=true&w=majority&appName=SmartFlow', {
   useNewUrlParser: true,
   useUnifiedTopology: true
 }, (err) => {
