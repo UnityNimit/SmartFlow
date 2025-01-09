@@ -1,66 +1,81 @@
 /* Reset some default styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     background-color: #f4f4f4;
     margin: 0;
-    padding: 20px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
-/* Center the forms on the page */
+.container {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 100%;
+    max-width: 400px;
+}
+
 h2 {
     text-align: center;
     color: #333;
+    margin-bottom: 20px;
 }
 
-form {
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 20px;
-    margin: 0 auto;
-    max-width: 400px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+.form-group {
+    margin-bottom: 15px;
 }
 
-/* Style the input fields */
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+}
+
 input[type="text"],
 input[type="password"] {
     width: 100%;
     padding: 10px;
-    margin: 10px 0;
     border: 1px solid #ccc;
     border-radius: 4px;
-    box-sizing: border-box; /* Ensures padding is included in width */
+    box-sizing: border-box;
+    font-size: 16px;
 }
 
-/* Style the buttons */
 button {
-    background-color: #5cb85c;
-    color: white;
+    width: 48%;
     padding: 10px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    width: 48%; /* Make buttons take up half the width */
-    margin: 5px 1%; /* Add some margin between buttons */
+    font-size: 16px;
+    transition: background-color 0.3s ease;
 }
 
-button:hover {
-    background-color: #4cae4c; /* Darker green on hover */
+button[type="submit"] {
+    background-color: #5cb85c;
+    color: white;
 }
 
-/* Style the reset button */
+button[type="submit"]:hover {
+    background-color: #4cae4c;
+}
+
 button[type="reset"] {
-    background-color: #d9534f; /* Red color for reset */
+    background-color: #d9534f;
+    color: white;
 }
 
 button[type="reset"]:hover {
-    background-color: #c9302c; /* Darker red on hover */
+    background-color: #c9302c;
 }
 
-/* Responsive design */
-@media (max-width: 500px) {
-    form {
-        width: 90%; /* Make form responsive on smaller screens */
-    }
+.error-message {
+    color: #d9534f;
+    text-align: center;
+    margin-top: 10px;
+    display: none;
 }
